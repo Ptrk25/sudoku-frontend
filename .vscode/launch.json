@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Next.js: debug server-side",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run dev"
+        },
+        {
+            "name": "Next.js: debug client-side",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:3000",
+        },
+        {
+            "name": "Next.js: debug full stack",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run dev",
+            "serverReadyAction": {
+                "pattern": "started server on .+, url: (https?://.+)",
+                "uriFormat": "%s",
+                "action": "debugWithEdge"
+            }
+        },
+        {
+            "name": "Containerdebug",
+            "type": "node",
+            "request": "attach",
+            "port": 9229,
+            "address": "localhost:9229/2c5d0c77-5759-4142-b046-c29be4eda518",
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "/app"
+        }
+    ]
+  }
+  
